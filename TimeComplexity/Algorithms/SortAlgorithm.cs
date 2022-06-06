@@ -29,6 +29,7 @@ public class SortAlgorithm
 
     public static List<int> QuickSort(List<int> integerList)
     {
+        StepCounter.InitialiseSteps();
         List<int> sortedList = integerList.ToList();
         QuickSort(sortedList, 0, sortedList.Count-1);
 
@@ -53,6 +54,7 @@ public class SortAlgorithm
 
             for (int j = startIdx; j < endIdx; j++)
             {
+                StepCounter.IncrementSteps();
                 if (integerList[j] <= pivot)
                 {
                     i++;
