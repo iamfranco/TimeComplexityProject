@@ -9,4 +9,5 @@ This repository is a C# project showcasing popular searching and sorting algorit
 
 ## Sorting Algorithms
 
-- SelectionSort $O(n^2)$
+- Selection Sort $O(n^2)$
+- Quick Sort $O(n\log(n))$
