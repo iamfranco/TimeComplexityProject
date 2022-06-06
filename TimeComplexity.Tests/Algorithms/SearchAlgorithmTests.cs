@@ -3,7 +3,7 @@
 namespace TimeComplexity.Tests.Algorithms;
 internal class SearchAlgorithmTests
 {
-    List<int> values;
+    List<int> values = new();
     [SetUp]
     public void Setup()
     {

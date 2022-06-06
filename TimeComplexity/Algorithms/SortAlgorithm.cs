@@ -26,4 +26,42 @@ public class SortAlgorithm
 
         return sortedList;
     }
+
+    public static List<int> QuickSort(List<int> integerList)
+    {
+        List<int> sortedList = integerList.ToList();
+        QuickSort(sortedList, 0, sortedList.Count-1);
+
+        return sortedList;
+
+        void QuickSort(List<int> integerList, int startIdx, int endIdx)
+        {
+            if (startIdx >= endIdx || startIdx < 0)
+                return;
+
+            int p = Partition(integerList, startIdx, endIdx);
+
+            QuickSort(integerList, startIdx, p - 1);
+            QuickSort(integerList, p + 1, endIdx);
+        }
+
+        int Partition(List<int> integerList, int startIdx, int endIdx)
+        {
+            int pivot = integerList[endIdx];
+
+            int i = startIdx - 1;
+
+            for (int j = startIdx; j < endIdx; j++)
+            {
+                if (integerList[j] <= pivot)
+                {
+                    i++;
+                    integerList.Swap(i, j);
+                }
+            }
+            i++;
+            integerList.Swap(i, endIdx);
+            return i;
+        }
+    }
 }

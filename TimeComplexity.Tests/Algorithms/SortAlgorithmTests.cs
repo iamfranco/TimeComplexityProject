@@ -4,9 +4,9 @@ using TimeComplexity.Algorithms;
 namespace TimeComplexity.Tests.Algorithms;
 internal class SortAlgorithmTests
 {
-    List<int> integerList;
-    List<int> sortedList;
-    Stopwatch stopwatch;
+    List<int> integerList = new();
+    List<int> sortedList = new();
+    Stopwatch stopwatch = new();
 
     [SetUp]
     public void Setup()
@@ -20,6 +20,12 @@ internal class SortAlgorithmTests
     public void SelectionSort_Should_Return_SortedList()
     {
         Sort_Should_Return_SortedList(SortAlgorithm.SelectionSort);
+    }
+
+    [Test]
+    public void QuickSort_Should_Return_SortedList()
+    {
+        Sort_Should_Return_SortedList(SortAlgorithm.QuickSort);
     }
 
     private void Sort_Should_Return_SortedList(Func<List<int>, List<int>> sortFunc)
